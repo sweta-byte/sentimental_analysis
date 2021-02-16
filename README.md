@@ -27,31 +27,45 @@ After the above steps, you should have four files in total: <preprocessed-train-
 For all the methods that follow, change the values of TRAIN_PROCESSED_FILE, TEST_PROCESSED_FILE, FREQ_DIST_FILE, and BI_FREQ_DIST_FILE to your own paths in the respective files. Wherever applicable, values of USE_BIGRAMS and FEAT_TYPE can be changed to obtain results using different types of features as described in report.
 
 Baseline
-Run baseline.py. With TRAIN = True it will show the accuracy results on training dataset.
+3. Run baseline.py. With TRAIN = True it will show the accuracy results on training dataset.
+
+
 Naive Bayes
-Run naivebayes.py. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+4. Run naivebayes.py. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+
+
 Maximum Entropy
-Run logistic.py to run logistic regression model OR run maxent-nltk.py <> to run MaxEnt model of NLTK. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+5. Run logistic.py to run logistic regression model OR run maxent-nltk.py <> to run MaxEnt model of NLTK. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+
+
 Decision Tree
-Run decisiontree.py. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+6. Run decisiontree.py. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+
 Random Forest
-Run randomforest.py. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+7. Run randomforest.py. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+
 XGBoost
-Run xgboost.py. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+8. Run xgboost.py. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+
 SVM
-Run svm.py. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+9. Run svm.py. With TRAIN = True it will show the accuracy results on 10% validation dataset.
+
 Multi-Layer Perceptron
-Run neuralnet.py. Will validate using 10% data and save the best model to best_mlp_model.h5.
+10.Run neuralnet.py. Will validate using 10% data and save the best model to best_mlp_model.h5.
+
 Reccurent Neural Networks
-Run lstm.py. Will validate using 10% data and save models for each epock in ./models/. (Please make sure this directory exists before running lstm.py).
+11. Run lstm.py. Will validate using 10% data and save models for each epock in ./models/. (Please make sure this directory exists before running lstm.py).
+
 Convolutional Neural Networks
-Run cnn.py. This will run the 4-Conv-NN (4 conv layers neural network) model as described in the report. To run other versions of CNN, just comment or remove the lines where Conv layers are added. Will validate using 10% data and save models for each epoch in ./models/. (Please make sure this directory exists before running cnn.py).
+12. Run cnn.py. This will run the 4-Conv-NN (4 conv layers neural network) model as described in the report. To run other versions of CNN, just comment or remove the lines where Conv layers are added. Will validate using 10% data and save models for each epoch in ./models/. (Please make sure this directory exists before running cnn.py).
+
 Majority Vote Ensemble
-To extract penultimate layer features for the training dataset, run extract-cnn-feats.py <saved-model>. This will generate 3 files, train-feats.npy, train-labels.txt and test-feats.npy.
-Run cnn-feats-svm.py which uses files from the previous step to perform SVM classification on features extracted from CNN model.
-Place all prediction CSV files for which you want to take majority vote in ./results/ and run majority-voting.py. This will generate majority-voting.csv.
+13. To extract penultimate layer features for the training dataset, run extract-cnn-feats.py <saved-model>. This will generate 3 files, train-feats.npy, train-labels.txt and test-feats.npy.
+14. Run cnn-feats-svm.py which uses files from the previous step to perform SVM classification on features extracted from CNN model.
+15. Place all prediction CSV files for which you want to take majority vote in ./results/ and run majority-voting.py. This will generate majority-voting.csv.
+  
 Information about other files
-dataset/positive-words.txt: List of positive words.
-dataset/negative-words.txt: List of negative words.
-dataset/glove-seeds.txt: GloVe words vectors from StanfordNLP which match our dataset for seeding word embeddings.
-Plots.ipynb: IPython notebook used to generate plots present in report.
+-->dataset/positive-words.txt: List of positive words.
+-->dataset/negative-words.txt: List of negative words.
+-->dataset/glove-seeds.txt: GloVe words vectors from StanfordNLP which match our dataset for seeding word embeddings.
+-->Plots.ipynb: IPython notebook used to generate plots present in report.
